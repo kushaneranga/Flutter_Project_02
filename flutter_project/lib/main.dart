@@ -1,3 +1,6 @@
+// Vertical List View
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -8,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         brightness: Brightness.dark,
@@ -35,18 +39,39 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Container(
+        child: ListView (
+          scrollDirection: Axis.vertical,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text('Profile'),
+              subtitle: Text('Click'),
+              trailing: Icon(Icons.menu),
+              onTap: (){},
+              onLongPress: (){},
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text('Profile'),
+              subtitle: Text('Click'),
+              trailing: Icon(Icons.menu),
+              onTap: (){},
+              onLongPress: (){},
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text('Profile'),
+              subtitle: Text('Click'),
+              trailing: Icon(Icons.menu),
+              onTap: (){},
+              onLongPress: (){},
             ),
           ],
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      )// This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
